@@ -1,0 +1,19 @@
+User-agent: *
+Allow: /
+
+# Private app pages should not be indexed.
+Disallow: /login
+Disallow: /dashboard
+Disallow: /admission
+Disallow: /fees
+Disallow: /pdf-generator
+Disallow: /seat-map
+Disallow: /requests
+Disallow: /students
+Disallow: /reports
+Disallow: /website-settings
+Disallow: /api/
+Disallow: /server/
+Disallow: /node_modules/
+
+Sitemap: https://galaxyhub.in/sitemap.xml

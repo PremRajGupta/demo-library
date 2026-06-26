@@ -1,0 +1,260 @@
+{
+  "info": {
+    "name": "Demo Library - Advance Payment Testing",
+    "description": "Test collection for advance payment and validity tracking system",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "1. Create Student (Sample Data)",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"Test Student - Advance Payment\",\n  \"fatherName\": \"Test Father\",\n  \"motherName\": \"Test Mother\",\n  \"mobile\": \"9876543210\",\n  \"parentMobile\": \"9876543211\",\n  \"email\": \"teststudent@example.com\",\n  \"address\": \"Test Address, Tehta, Rajasthan\",\n  \"course\": \"course1\",\n  \"timeShift\": \"8hours\",\n  \"feeAmount\": 500,\n  \"joiningDate\": \"2024-06-04\"\n}\n"
+        },
+        "url": {
+          "raw": "http://localhost:5000/api/students",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5000",
+          "path": [
+            "api",
+            "students"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "2. Create Payment (₹1500 Advance)",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"studentDisplayId\": \"STU1234\",\n  \"amount\": 1500,\n  \"month\": \"2024-06\",\n  \"paymentMode\": \"cash\",\n  \"notes\": \"Advance payment - 3 months\"\n}\n"
+        },
+        "url": {
+          "raw": "http://localhost:5000/api/fees",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5000",
+          "path": [
+            "api",
+            "fees"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "3. Mark as Advance Payment",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"monthlyFee\": 500,\n  \"advanceStartDate\": \"2024-06-04\",\n  \"isAdvance\": true\n}\n"
+        },
+        "url": {
+          "raw": "http://localhost:5000/api/fees/{{PAYMENT_ID}}/mark-advance",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5000",
+          "path": [
+            "api",
+            "fees",
+            "{{PAYMENT_ID}}",
+            "mark-advance"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "4. Get Student Payment Validity",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:5000/api/fees/student/STU1234/validity",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5000",
+          "path": [
+            "api",
+            "fees",
+            "student",
+            "STU1234",
+            "validity"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "5. Test: Half Month (0 months validity)",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"studentDisplayId\": \"STU1234\",\n  \"amount\": 250,\n  \"month\": \"2024-07\",\n  \"paymentMode\": \"cash\",\n  \"notes\": \"Half month payment - should be 0 months\"\n}\n"
+        },
+        "url": {
+          "raw": "http://localhost:5000/api/fees",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5000",
+          "path": [
+            "api",
+            "fees"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "6. Test: Multiple Months (7 months)",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"studentDisplayId\": \"STU1234\",\n  \"amount\": 3500,\n  \"month\": \"2024-07\",\n  \"paymentMode\": \"cash\",\n  \"notes\": \"7 months advance payment\"\n}\n"
+        },
+        "url": {
+          "raw": "http://localhost:5000/api/fees",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5000",
+          "path": [
+            "api",
+            "fees"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "7. Test: Different Time Shift (6 hours = ₹400)",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"6 Hour Student\",\n  \"fatherName\": \"Test Father\",\n  \"mobile\": \"9876543220\",\n  \"email\": \"sixhour@example.com\",\n  \"address\": \"Test Address\",\n  \"course\": \"course2\",\n  \"timeShift\": \"6hours\",\n  \"feeAmount\": 400,\n  \"joiningDate\": \"2024-06-04\"\n}\n"
+        },
+        "url": {
+          "raw": "http://localhost:5000/api/students",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5000",
+          "path": [
+            "api",
+            "students"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "8. Get All Fees",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:5000/api/fees",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5000",
+          "path": [
+            "api",
+            "fees"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "9. Check Fee in Database",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:5000/api/fees",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5000",
+          "path": [
+            "api",
+            "fees"
+          ]
+        }
+      },
+      "response": []
+    }
+  ],
+  "variable": [
+    {
+      "key": "PAYMENT_ID",
+      "value": "PASTE_PAYMENT_ID_HERE",
+      "type": "string"
+    },
+    {
+      "key": "STUDENT_ID",
+      "value": "STU1234",
+      "type": "string"
+    }
+  ]
+}

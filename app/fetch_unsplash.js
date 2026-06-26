@@ -1,0 +1,1 @@
+fetch('https://unsplash.com/photos/black-computer-keyboard-on-white-table-nVeTGyYosKY').then(r=>r.text()).then(t=>{ const match = t.match(/https:\/\/images\.unsplash\.com\/photo-[a-zA-Z0-9\-]+[^\s"'\\]+/); console.log(match ? match[0] : 'not found') });

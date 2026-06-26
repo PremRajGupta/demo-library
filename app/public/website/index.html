@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Demo Library</title>
+  <link rel="icon" type="image/png" href="assets/logo.png" />
+
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet" />
+  <!-- Aapki custom CSS — yahan style change karo -->
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- Server offline warning (auto show) -->
+  <div id="offlineBanner" class="offline-banner">
+    Server offline — default numbers dikha rahe hain. Backend port 5000 par chalao.
+  </div>
+
+  <!-- ==================== NAVBAR — links edit karo ==================== -->
+  <nav class="navbar navbar-expand-lg gl-navbar fixed-top">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center gap-2 text-white" href="#home">
+        <img src="assets/logo.png" alt="Galaxy Education Hub logo" />
+        <span class="fw-semibold d-none d-sm-inline" data-field="library-name">Galaxy Education Hub</span>
+      </a>
+      <button class="navbar-toggler border-0 text-white" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+        <i class="bi bi-list fs-3"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="mainNav">
+        <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-3">
+          <li class="nav-item"><a class="nav-link" data-scroll="#home" href="#home" data-text="navHome">Home</a></li>
+          <li class="nav-item"><a class="nav-link" data-scroll="#about" href="#about" data-text="navAbout">About</a></li>
+          <li class="nav-item"><a class="nav-link" data-scroll="#stats" href="#stats" data-text="navStats">Stats</a></li>
+          <li class="nav-item"><a class="nav-link" data-scroll="#contact" href="#contact" data-text="navContact">Contact Us</a></li>
+          <li class="nav-item">
+            <!-- Login = React dashboard (same server par /login) -->
+            <a class="btn btn-gl-primary btn-sm px-4" href="/login" data-text="navLogin">Login</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ==================== HERO SLIDER — slide add/delete karo ==================== -->
+  <section id="home">
+    <!-- Slide 1 -->
+    <div class="hero-slide active">
+      <img src="https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=1600&q=80" alt="Welcome" />
+      <div class="hero-overlay"></div>
+    </div>
+    <!-- Slide 2 -->
+    <div class="hero-slide">
+      <img src="https://images.unsplash.com/photo-1521587760476-6c12a4b040da?w=1600&q=80" alt="Reading space" />
+      <div class="hero-overlay"></div>
+    </div>
+    <!-- Slide 3 -->
+    <div class="hero-slide">
+      <img src="https://images.unsplash.com/photo-1497633762263-9fc17917a379?w=1600&q=80" alt="Books" />
+      <div class="hero-overlay"></div>
+    </div>
+    <!-- Slide 4 -->
+    <div class="hero-slide">
+      <img src="https://images.unsplash.com/photo-1524995997947-0401c39e8a98?w=1600&q=80" alt="Join us" />
+      <div class="hero-overlay"></div>
+    </div>
+    <!-- Slide 5 — naya slide copy karke add karo; dot bhi add karna -->
+    <div class="hero-slide">
+      <img src="https://images.unsplash.com/photo-1524995997947-0401c39e8a98?w=1600&q=80" alt="Separate seats" />
+      <div class="hero-overlay"></div>
+    </div>
+
+    <div class="hero-content">
+      <div class="container">
+        <!-- Hero text — har slide ke liye alag text chahiye to JS extend karo ya ek hi rakho -->
+        <div class="col-lg-7 text-white">
+          <h1 class="display-5 fw-bold mb-3">Welcome to Demo Library</h1>
+          <p class="lead text-light mb-4 opacity-75">
+            A peaceful environment for serious study and exam preparation.
+          </p>
+          <div class="d-flex flex-column flex-sm-row gap-3">
+            <a href="#gallery" class="btn btn-gl-primary btn-lg px-4" data-scroll="#gallery" data-text="heroVisitButton">Visit</a>
+            <a href="#contact" class="btn btn-outline-light btn-lg px-4" data-scroll="#contact" data-text="heroContactButton">Contact</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <button type="button" class="hero-arrow prev" id="heroPrev" aria-label="Previous"><i class="bi bi-chevron-left"></i></button>
+    <button type="button" class="hero-arrow next" id="heroNext" aria-label="Next"><i class="bi bi-chevron-right"></i></button>
+
+    <div class="hero-dots">
+      <button type="button" class="hero-dot active" aria-label="Slide 1"></button>
+      <button type="button" class="hero-dot" aria-label="Slide 2"></button>
+      <button type="button" class="hero-dot" aria-label="Slide 3"></button>
+      <button type="button" class="hero-dot" aria-label="Slide 4"></button>
+      <button type="button" class="hero-dot" aria-label="Slide 5"></button>
+    </div>
+  </section>
+
+  <!-- ==================== ABOUT — text edit karo ==================== -->
+  <section id="about" class="py-5 py-lg-5 bg-white">
+    <div class="container py-4">
+      <div class="text-center mb-5 mx-auto" style="max-width: 720px;">
+        <h2 class="section-title mb-3">About Galaxy Education Hub</h2>
+        <p class="section-subtitle mb-3">
+          Galaxy Education Hub is a dedicated study space designed for students preparing for competitive exams,
+          board exams, and higher education. We provide a quiet, disciplined, and comfortable environment.
+        </p>
+        <p class="section-subtitle">
+          With assigned seats, flexible time shifts, and professional management, we help students stay consistent.
+        </p>
+      </div>
+      <div class="row g-4">
+        <div class="col-6 col-lg-3">
+          <div class="highlight-card">
+            <p class="value">Assigned</p>
+            <p class="label">Individual Seats</p>
+          </div>
+        </div>
+        <div class="col-6 col-lg-3">
+          <div class="highlight-card">
+            <p class="value">4h – 24h</p>
+            <p class="label">Study Shifts</p>
+          </div>
+        </div>
+        <div class="col-6 col-lg-3">
+          <div class="highlight-card">
+            <p class="value">Peaceful</p>
+            <p class="label">Environment</p>
+          </div>
+        </div>
+        <div class="col-6 col-lg-3">
+          <div class="highlight-card">
+            <p class="value">Professional</p>
+            <p class="label">Management</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== STATS — numbers API se aate hain (300+ base) ==================== -->
+  <section id="stats" class="py-5 py-lg-5">
+    <div class="container py-4">
+      <div class="text-center mb-5">
+        <h2 class="section-title mb-3" data-text="statsTitle">Our Growth in Numbers</h2>
+        <p class="section-subtitle" data-text="statsSubtitle">Trusted by hundreds of students — real counts from Demo Library.</p>
+      </div>
+      <div class="row g-4 justify-content-center" style="max-width: 900px; margin: 0 auto;">
+        <div class="col-md-4">
+          <div class="stat-card">
+            <div class="stat-icon bg-primary"><i class="bi bi-people-fill"></i></div>
+            <div class="stat-number" id="statAdmissions" data-fallback="300">300</div>
+            <div class="stat-label" data-text="statsAdmissionsLabel">Total Admissions</div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="stat-card">
+            <div class="stat-icon bg-success"><i class="bi bi-eye-fill"></i></div>
+            <div class="stat-number" id="statVisitors" data-fallback="300">300</div>
+            <div class="stat-label" data-text="statsVisitorsLabel">Website Visitors</div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="stat-card">
+            <div class="stat-icon bg-info"><i class="bi bi-clock-fill"></i></div>
+            <div class="stat-number">4h – 24h</div>
+            <div class="stat-label" data-text="statsStudyShiftsLabel">Flexible Study Shifts</div>
+          </div>
+        </div>
+      </div>
+      <p class="text-center text-muted small mt-4" data-text="statsFootnote">
+        Admission count includes legacy students (from 300) plus active members in the system.
+      </p>
+    </div>
+  </section>
+
+  <!-- ==================== GALLERY — image add/delete karo ==================== -->
+  <section id="gallery" class="py-5 py-lg-5">
+    <div class="container py-4">
+      <div class="text-center mb-5">
+        <h2 class="section-title mb-3" data-text="galleryTitle">Our Library Gallery</h2>
+        <p class="section-subtitle" data-text="gallerySubtitle">Take a look at our study space and peaceful environment.</p>
+      </div>
+      <div class="row g-4">
+        <div class="col-sm-6 col-lg-3">
+          <button type="button" class="gallery-item w-100" data-title="Reading Hall">
+            <img src="https://images.unsplash.com/photo-1497633762263-9fc17917a379?w=800&q=80" alt="Reading Hall" />
+            <span class="caption">Reading Hall</span>
+          </button>
+        </div>
+        <div class="col-sm-6 col-lg-3">
+          <button type="button" class="gallery-item w-100" data-title="Study Desks">
+            <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=800&q=80" alt="Study Desks" />
+            <span class="caption">Study Desks</span>
+          </button>
+        </div>
+        <div class="col-sm-6 col-lg-3">
+          <button type="button" class="gallery-item w-100" data-title="Focused Learning">
+            <img src="https://images.unsplash.com/photo-1456513080920-9a0d7562240b?w=800&q=80" alt="Focused Learning" />
+            <span class="caption">Focused Learning</span>
+          </button>
+        </div>
+        <div class="col-sm-6 col-lg-3">
+          <button type="button" class="gallery-item w-100" data-title="Library Ambience">
+            <img src="https://images.unsplash.com/photo-1434030214721-08960469366f?w=800&q=80" alt="Library Ambience" />
+            <span class="caption">Library Ambience</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Gallery lightbox popup -->
+  <div id="lightbox" class="lightbox" role="dialog" aria-modal="true">
+    <button type="button" id="lightboxClose" class="lightbox-close" aria-label="Close">&times;</button>
+    <div class="text-center">
+      <img id="lightboxImg" src="" alt="" />
+      <p id="lightboxTitle" class="text-white mt-3 fs-5"></p>
+    </div>
+  </div>
+
+  <!-- ==================== CONTACT — phone, email, address edit karo ==================== -->
+  <section id="contact" class="py-5 py-lg-5 bg-white">
+    <div class="container py-4">
+      <div class="text-center mb-5">
+        <h2 class="section-title mb-3" data-text="contactTitle">Contact Us</h2>
+        <p class="section-subtitle" data-text="contactSubtitle">Reach out for admission, fees, or any query.</p>
+      </div>
+      <div class="contact-box mx-auto" style="max-width: 640px;">
+        <h3 class="h5 fw-semibold mb-4" data-field="owner-name">Demo Library Management</h3>
+
+        <div class="d-flex gap-3 mb-4">
+          <div class="contact-icon bg-primary bg-opacity-10 text-primary"><i class="bi bi-telephone-fill"></i></div>
+          <div>
+            <p class="small text-muted mb-0" data-text="contactPhoneLabel">Phone</p>
+            <a href="tel:917488252019" class="fw-medium text-decoration-none text-dark" data-field="phone-link">
+              <span data-field="phone">+91 74882 52019</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="d-flex gap-3 mb-4">
+          <div class="contact-icon bg-success bg-opacity-10 text-success"><i class="bi bi-envelope-fill"></i></div>
+          <div>
+            <p class="small text-muted mb-0" data-text="contactEmailLabel">Email</p>
+            <a href="mailto:galaxy.library@gmail.com" class="fw-medium text-decoration-none text-dark" data-field="email-link">
+              <span data-field="email">galaxy.library@gmail.com</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="d-flex gap-3 mb-4">
+          <div class="contact-icon bg-warning bg-opacity-25 text-warning"><i class="bi bi-geo-alt-fill"></i></div>
+          <div>
+            <p class="small text-muted mb-0" data-text="contactAddressLabel">Address</p>
+            <p class="fw-medium mb-0" data-field="address">DhiraBigha, Sugaon Road, Tehta, Jehanabad, Bihar 804427</p>
+          </div>
+        </div>
+
+        <a href="https://wa.me/917488252019" target="_blank" rel="noopener noreferrer"
+           class="btn btn-whatsapp btn-lg px-4" data-field="whatsapp-link">
+          <i class="bi bi-whatsapp me-2"></i><span data-text="whatsappButton">Chat on WhatsApp</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="gl-footer py-5">
+    <div class="container">
+      <div class="row g-4 mb-4">
+        <div class="col-md-4">
+          <div class="d-flex align-items-center gap-2 mb-3 brand">
+            <img src="assets/logo.png" alt="Logo" />
+            <span class="text-white fw-semibold" data-field="library-name">Demo Library</span>
+          </div>
+          <p class="small" data-field="library-tagline">Your Space to Focus, Learn &amp; Grow</p>
+        </div>
+        <div class="col-md-4">
+          <h5 class="text-white fw-semibold mb-3" data-text="footerQuickLinksTitle">Quick Links</h5>
+          <ul class="list-unstyled small">
+            <li class="mb-2"><a href="#home" data-scroll="#home">Home</a></li>
+            <li class="mb-2"><a href="#about" data-scroll="#about">About</a></li>
+            <li class="mb-2"><a href="#stats" data-scroll="#stats">Stats</a></li>
+            <li class="mb-2"><a href="#gallery" data-scroll="#gallery">Gallery</a></li>
+            <li class="mb-2"><a href="#contact" data-scroll="#contact">Contact</a></li>
+          </ul>
+        </div>
+        <div class="col-md-4">
+          <h5 class="text-white fw-semibold mb-3" data-text="footerGetStartedTitle">Get Started</h5>
+          <p class="small mb-3" data-text="footerGetStartedText">Login to access the management dashboard.</p>
+          <a href="/login" class="btn btn-gl-primary btn-sm" data-text="footerLoginButton">Login</a>
+        </div>
+      </div>
+      <div class="border-top border-secondary border-opacity-25 pt-4 text-center small">
+        &copy; <span id="footerYear">2026</span> <span data-field="library-name">Demo Library</span>.
+        <span data-text="footerCopyright">All rights reserved.</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Aapki custom JS -->
+  <script src="js/main.js"></script>
+</body>
+</html>
