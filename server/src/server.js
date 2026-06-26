@@ -51,9 +51,13 @@ const isLocalDevOrigin = (origin) => {
   return /^https?:\/\/(localhost|127\.0\.0\.1):\d+$/.test(origin);
 };
 
+const isVercelOrigin = (origin) => {
+  return origin && origin.endsWith('.vercel.app');
+};
+
 app.use(cors({
   origin: (origin, callback) => {
-    if (!origin || allowedOrigins.includes(origin) || isLocalDevOrigin(origin)) {
+    if (!origin || allowedOrigins.includes(origin) || isLocalDevOrigin(origin) || isVercelOrigin(origin)) {
       callback(null, true);
     } else {
       callback(new Error('CORS not allowed'));
