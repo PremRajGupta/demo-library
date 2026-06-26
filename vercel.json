@@ -1,8 +1,10 @@
 {
-  "routes": [
+  "buildCommand": "npm run build && cp -a app/dist dist",
+  "outputDirectory": "dist",
+  "rewrites": [
     {
-      "src": "^/(?!api).*",
-      "dest": "/index.html"
+      "source": "/(.*)",
+      "destination": "/index.html"
     }
   ]
 }
