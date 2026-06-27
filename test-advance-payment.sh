@@ -32,7 +32,7 @@ STUDENT_RESPONSE=$(curl -s -X POST "$API_URL/students" \
   -d "{
     \"name\": \"Test Student - $STUDENT_ID\",
     \"fatherName\": \"Test Father\",
-    \"mobile\": \"9876543210\",
+    \"mobile\": \"9229186355\",
     \"email\": \"test-$STUDENT_ID@example.com\",
     \"address\": \"Test Address\",
     \"course\": \"course1\",

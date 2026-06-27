@@ -42,7 +42,7 @@ describe('Seat Module', () => {
       const student = await Student.create({
         name: 'Seat Student',
         studentId: 'SEAT123',
-        mobile: '1234567890',
+        mobile: '9229186355',
         email: 'seat@student.com',
         branchId: new mongoose.Types.ObjectId().toString(),
         organizationId: 'org1',

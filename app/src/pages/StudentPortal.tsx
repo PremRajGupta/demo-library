@@ -16,7 +16,7 @@ import AppLogo from '../components/AppLogo';
 import ChatBot from '../components/ChatBot';
 
 const RUPEE = '\u20B9';
-const PAYMENT_UPI_ID = '7488252019@okbizaxis';
+const PAYMENT_UPI_ID = '9229186355@okbizaxis';
 const PAYMENT_PAYEE_NAME = 'Galaxy Computer';
 const PAYMENT_NOTE = 'Library Fee';
 const formatRupee = (amount: number) => `${RUPEE}${amount.toLocaleString('en-IN')}`;
@@ -510,13 +510,13 @@ export default function StudentPortal() {
                   </a>
                   <div className="grid grid-cols-2 gap-2">
                     <a 
-                      href="tel:7488252019" 
+                      href="tel:9229186355"
                       className="py-2 sm:py-2.5 bg-slate-50 hover:bg-slate-100 border border-slate-200/60 rounded-lg sm:rounded-xl text-[10px] sm:text-xs font-bold text-[#1e293b] flex items-center justify-center gap-1.5 transition-all"
                     >
                       <Phone size={12} className="sm:w-[14px] sm:h-[14px] text-blue-600" /> Call Admin
                     </a>
                     <a 
-                      href="https://wa.me/917488252019" 
+                      href="https://wa.me/919229186355"
                       target="_blank" 
                       rel="noreferrer"
                       className="py-2 sm:py-2.5 bg-[#25d366]/10 hover:bg-[#25d366]/20 border border-[#25d366]/20 rounded-lg sm:rounded-xl text-[10px] sm:text-xs font-bold text-[#075e54] flex items-center justify-center gap-1.5 transition-all"
@@ -543,7 +543,7 @@ export default function StudentPortal() {
                 <div className="bg-white p-2 sm:p-3 border-2 border-gray-100 rounded-xl sm:rounded-2xl shadow-sm mb-2 sm:mb-3">
                   <img src="/qr-code.png" alt="Payment QR" className="w-36 h-36 sm:w-48 sm:h-48 lg:w-52 lg:h-52 object-contain" />
                 </div>
-                <p className="text-[10px] sm:text-[11px] text-gray-500 font-bold mb-1 tracking-wide">UPI ID : 7488252019@okbizaxis</p>
+                <p className="text-[10px] sm:text-[11px] text-gray-500 font-bold mb-1 tracking-wide">UPI ID : 9229186355@okbizaxis</p>
                 <div className="flex justify-center items-center gap-2 my-1">
                   <img src="https://upload.wikimedia.org/wikipedia/commons/e/e1/UPI-Logo-vector.svg" alt="UPI" className="h-3 sm:h-4" />
                 </div>
@@ -604,7 +604,7 @@ export default function StudentPortal() {
                       <button
                         type="button"
                         onClick={() => {
-                          navigator.clipboard.writeText('7488252019@okbizaxis');
+                          navigator.clipboard.writeText('9229186355@okbizaxis');
                           setCopiedUpi(true);
                           setTimeout(() => setCopiedUpi(false), 2000);
                         }}
@@ -639,7 +639,7 @@ export default function StudentPortal() {
                       if (utrNumber.length < 12) {
                         alert('Please enter the 12-digit UTR / Transaction Reference No. first.');
                       } else {
-                        window.open(`https://wa.me/917488252019?text=${encodeURIComponent(`Hi, I have paid ₹${selectedPayAmount} for Student ID: ${student.studentId}.\nName: ${student.name}\nUTR No: ${utrNumber}\n\n*Please find the screenshot attached.*`)}`, '_blank');
+                        window.open(`https://wa.me/919229186355?text=${encodeURIComponent(`Hi, I have paid ₹${selectedPayAmount} for Student ID: ${student.studentId}.\nName: ${student.name}\nUTR No: ${utrNumber}\n\n*Please find the screenshot attached.*`)}`, '_blank');
                       }
                     }}
                     className={`w-full py-3 sm:py-3.5 rounded-lg sm:rounded-xl text-xs sm:text-sm font-black flex items-center justify-center gap-2 transition-all mb-4 border ${utrNumber.length >= 12 ? 'bg-[#25d366] text-white border-[#1da851] hover:shadow-[0_5px_20px_rgba(37,211,102,0.4)] hover:-translate-y-0.5' : 'bg-white/10 text-[#4ade80] border-white/20 hover:bg-white/20'}`}
@@ -653,7 +653,7 @@ export default function StudentPortal() {
                       <div>
                         <strong className="block mb-2 text-[#facc15] text-xs sm:text-sm font-black">Important Note:</strong> 
                         <p className="mb-3 text-xs sm:text-[13px] leading-relaxed">
-                          Payment ke baad apna <strong>Screenshot</strong> aur <strong>Student ID 7488252019 par Whatsapps bhejein</strong> taaki payment successful ho sake.
+                          Payment ke baad apna <strong>Screenshot</strong> aur <strong>Student ID 9229186355 par Whatsapps bhejein</strong> taaki payment successful ho sake.
                         </p>
                         <p className="text-[#fecdd3] font-bold text-[11px] sm:text-[12px]">
                           Without sharing the Payment Screenshot, the payment is not valid.
@@ -909,7 +909,7 @@ export default function StudentPortal() {
                   onClick={() => {
                     const text = (document.getElementById('feedback-text') as HTMLTextAreaElement).value;
                     if(!text) return alert('Please write some feedback first.');
-                    window.open(`https://wa.me/917488252019?text=${encodeURIComponent(`*Student Feedback*\nName: ${student.name}\nID: ${student.studentId}\nFeedback: ${text}`)}`, '_blank');
+                    window.open(`https://wa.me/919229186355?text=${encodeURIComponent(`*Student Feedback*\nName: ${student.name}\nID: ${student.studentId}\nFeedback: ${text}`)}`, '_blank');
                   }}
                   className="px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-xl flex items-center gap-2 transition-all shadow-md"
                 >

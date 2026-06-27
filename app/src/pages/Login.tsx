@@ -84,6 +84,47 @@ export default function Login() {
               </button>
             </div>
 
+            {/* Demo Credentials Hint */}
+            <div className="mb-6 p-4 bg-blue-50/50 border border-blue-100 rounded-xl flex flex-col gap-3">
+              <div className="flex items-center justify-between">
+                <span className="text-xs font-bold text-blue-800 uppercase tracking-wider flex items-center gap-1.5">
+                  <span className="relative flex h-2.5 w-2.5">
+                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
+                    <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-blue-500"></span>
+                  </span>
+                  Demo Credentials
+                </span>
+                <button
+                  type="button"
+                  onClick={() => {
+                    if (loginType === 'admin') {
+                      setEmail('demo@gmail.com');
+                      setPassword('Prem@123');
+                    } else {
+                      setEmail('student@demo.com');
+                      setPassword('Galaxy@1234');
+                    }
+                  }}
+                  className="text-xs font-bold text-blue-700 hover:text-blue-800 bg-white px-3 py-1.5 rounded-lg shadow-sm border border-blue-200 transition-all hover:shadow hover:-translate-y-0.5 active:translate-y-0"
+                >
+                  Auto Fill
+                </button>
+              </div>
+              <div className="flex flex-col gap-1.5 text-sm">
+                <div className="flex items-center justify-between bg-white px-3 py-2 rounded-lg border border-blue-100">
+                  <span className="text-slate-500 font-medium">Email</span>
+                  <span className="text-slate-900 font-bold select-all">{loginType === 'admin' ? 'demo@gmail.com' : 'student@demo.com'}</span>
+                </div>
+                <div className="flex items-center justify-between bg-white px-3 py-2 rounded-lg border border-blue-100">
+                  <span className="text-slate-500 font-medium">Password</span>
+                  <span className="text-slate-900 font-bold select-all">{loginType === 'admin' ? 'Prem@123' : 'Galaxy@1234'}</span>
+                </div>
+                {loginType === 'student' && (
+                  <p className="text-[11px] text-slate-500 mt-0.5 italic text-center">Or any active student's credentials</p>
+                )}
+              </div>
+            </div>
+
             {error && (
               <motion.div
                 initial={{ opacity: 0, y: -10 }}

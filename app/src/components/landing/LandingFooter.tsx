@@ -96,7 +96,7 @@ export default function LandingFooter({
         <div className="pt-6 border-t border-slate-200 dark:border-slate-800 flex flex-col md:flex-row items-center justify-between gap-4 text-sm font-medium transition-colors">
           <p className="md:flex-1 text-center md:text-left">&copy; {year} {libraryInfo.name}. {pageText.footerCopyright}</p>
           <p className="md:flex-1 text-center font-bold text-blue-600 dark:text-blue-400">
-            Developer By: Roy Prem - From Bihar
+            Developer By: Prem Gupta- From Bihar
           </p>
           <div className="md:flex-1 flex justify-center md:justify-end gap-6">
             <Link to="/privacypolicy" className="hover:text-slate-600 dark:hover:text-slate-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Privacy Policy</Link>

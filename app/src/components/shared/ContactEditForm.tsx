@@ -34,7 +34,7 @@ export default function ContactEditForm({
             className={inputClass}
             value={contact.phone}
             onChange={(e) => onContactChange('phone', e.target.value)}
-            placeholder="e.g., +91 74882 52019"
+            placeholder="e.g., +91 9229186355"
           />
         </div>
 
@@ -48,7 +48,7 @@ export default function ContactEditForm({
             className={inputClass}
             value={contact.phoneRaw}
             onChange={(e) => onContactChange('phoneRaw', e.target.value.replace(/\D/g, ''))}
-            placeholder="e.g., 917488252019"
+            placeholder="e.g., 919229186355"
           />
         </div>
 

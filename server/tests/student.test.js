@@ -22,7 +22,7 @@ describe('Student Module', () => {
       await Student.create({
         name: 'Test Student',
         studentId: '12345',
-        mobile: '9876543210',
+        mobile: '9229186355',
         email: 'test@student.com',
         branchId: new mongoose.Types.ObjectId().toString(),
         organizationId: 'org1',
@@ -48,7 +48,7 @@ describe('Student Module', () => {
       const newStudent = {
         name: 'Jane Doe',
         studentId: '54321',
-        mobile: '1234567890',
+        mobile: '9229186355',
         email: 'jane@student.com',
         branchId: new mongoose.Types.ObjectId().toString(),
         organizationId: 'org1',

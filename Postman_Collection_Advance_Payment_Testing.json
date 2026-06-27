@@ -17,7 +17,7 @@
         ],
         "body": {
           "mode": "raw",
-          "raw": "{\n  \"name\": \"Test Student - Advance Payment\",\n  \"fatherName\": \"Test Father\",\n  \"motherName\": \"Test Mother\",\n  \"mobile\": \"9876543210\",\n  \"parentMobile\": \"9876543211\",\n  \"email\": \"teststudent@example.com\",\n  \"address\": \"Test Address, Tehta, Rajasthan\",\n  \"course\": \"course1\",\n  \"timeShift\": \"8hours\",\n  \"feeAmount\": 500,\n  \"joiningDate\": \"2024-06-04\"\n}\n"
+          "raw": "{\n  \"name\": \"Test Student - Advance Payment\",\n  \"fatherName\": \"Test Father\",\n  \"motherName\": \"Test Mother\",\n  \"mobile\": \"9229186355\",\n  \"parentMobile\": \"9229186355\",\n  \"email\": \"teststudent@example.com\",\n  \"address\": \"Test Address, Tehta, Rajasthan\",\n  \"course\": \"course1\",\n  \"timeShift\": \"8hours\",\n  \"feeAmount\": 500,\n  \"joiningDate\": \"2024-06-04\"\n}\n"
         },
         "url": {
           "raw": "http://localhost:5000/api/students",
@@ -187,7 +187,7 @@
         ],
         "body": {
           "mode": "raw",
-          "raw": "{\n  \"name\": \"6 Hour Student\",\n  \"fatherName\": \"Test Father\",\n  \"mobile\": \"9876543220\",\n  \"email\": \"sixhour@example.com\",\n  \"address\": \"Test Address\",\n  \"course\": \"course2\",\n  \"timeShift\": \"6hours\",\n  \"feeAmount\": 400,\n  \"joiningDate\": \"2024-06-04\"\n}\n"
+          "raw": "{\n  \"name\": \"6 Hour Student\",\n  \"fatherName\": \"Test Father\",\n  \"mobile\": \"9229186355\",\n  \"email\": \"sixhour@example.com\",\n  \"address\": \"Test Address\",\n  \"course\": \"course2\",\n  \"timeShift\": \"6hours\",\n  \"feeAmount\": 400,\n  \"joiningDate\": \"2024-06-04\"\n}\n"
         },
         "url": {
           "raw": "http://localhost:5000/api/students",

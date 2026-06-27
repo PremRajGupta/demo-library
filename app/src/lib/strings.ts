@@ -4,7 +4,7 @@ const S = {
   receiptTitle: 'Library Fee Receipt',
   receiptSubtitle: 'Library Management System',
   receiptOwnerName: 'Aman Kumar',
-  receiptOwnerContact: '+91 7488252019',
+  receiptOwnerContact: '+91 9229186355',
   receiptOwnerAddress: 'DhiraBigha Sugaon Road, Tehtar, Bihar',
   receiptThankYou: 'Thank you for your payment. Please keep this receipt for your records.',
   receiptFileName: (studentId: string, id: string) => `${studentId}-${id}.pdf`,
